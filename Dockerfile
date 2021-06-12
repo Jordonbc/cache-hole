@@ -46,7 +46,7 @@ ARG PIHOLE_VERSION
 ENV VERSION "${PIHOLE_VERSION}"
 ENV PATH /opt/pihole:${PATH}
 
-RUN git clone https://github.com/uklans/cache-domains.git /CacheDomains
+RUN git clone https://github.com/uklans/cache-domains.git CacheDomains
 RUN sh CacheDomains/scripts/create-dnsmasq.sh
 
 ARG NAME
