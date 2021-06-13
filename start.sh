@@ -188,4 +188,6 @@ else
   pihole logging on
 fi
 
+. /cache-install.sh
+
 echo " ::: Docker start setup complete"
