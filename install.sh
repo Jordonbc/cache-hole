@@ -27,7 +27,7 @@ cd CacheDomains/scripts
 bash create-dnsmasq.sh
 
 cp -rf output/dnsmasq/*.conf /etc/dnsmasq.d
-cp -rf output/dnsmasq/hosts/* /etc/dnsmasq/hosts
+cp -rf output/dnsmasq/hosts /etc/dnsmasq/hosts
 
 # curl in armhf-buster's image has SSL issues. Running c_rehash fixes it.
 # https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=923479
