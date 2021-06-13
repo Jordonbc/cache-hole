@@ -28,6 +28,8 @@ ARG PHP_ERROR_LOG
 ENV PHP_ERROR_LOG "${PHP_ERROR_LOG}"
 COPY ./start.sh /
 COPY ./bash_functions.sh /
+COPY ./cache-install.sh /
+COPY ./cache-update.sh /
 
 # IPv6 disable flag for networks/devices that do not support it
 ENV IPv6 True
