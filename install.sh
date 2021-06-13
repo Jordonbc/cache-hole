@@ -19,7 +19,7 @@ fi
 apt-get update
 apt-get install --no-install-recommends -y curl procps ca-certificates
 
-apt-get install git
+apt-get install -y --force-yes git
 
 git clone https://github.com/uklans/cache-domains.git /CacheDomains
 sh /CacheDomains/scripts/create-dnsmasq.sh
