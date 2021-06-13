@@ -18,6 +18,12 @@ fi
 
 apt-get update
 apt-get install --no-install-recommends -y curl procps ca-certificates
+
+apt-get install git
+
+git clone https://github.com/uklans/cache-domains.git /CacheDomains
+sh /CacheDomains/scripts/create-dnsmasq.sh
+
 # curl in armhf-buster's image has SSL issues. Running c_rehash fixes it.
 # https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=923479
 c_rehash
