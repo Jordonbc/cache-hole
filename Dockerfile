@@ -1,8 +1,6 @@
 ARG PIHOLE_BASE
 FROM $PIHOLE_BASE
 
-RUN apt-get install git
-
 ARG PIHOLE_ARCH
 ENV PIHOLE_ARCH "${PIHOLE_ARCH}"
 ARG S6_ARCH
@@ -47,9 +45,6 @@ ENV DNSMASQ_USER root
 ARG PIHOLE_VERSION
 ENV VERSION "${PIHOLE_VERSION}"
 ENV PATH /opt/pihole:${PATH}
-
-RUN git clone https://github.com/uklans/cache-domains.git CacheDomains
-RUN sh CacheDomains/scripts/create-dnsmasq.sh
 
 ARG NAME
 LABEL image="${NAME}:${PIHOLE_VERSION}_${PIHOLE_ARCH}"
