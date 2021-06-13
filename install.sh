@@ -21,12 +21,13 @@ apt-get install --no-install-recommends -y curl procps ca-certificates
 
 apt-get install --no-install-recommends -y git jq
 
-git clone https://github.com/Jordonbc/cache-domains.git /CacheDomains
+git clone https://github.com/Jordonbc/cache-domains.git CacheDomains
 #echo "{'ips': {'generic':	'${LANCACHE_IP}'},'cache_domains': {'default': 	'generic','blizzard': 	'generic','origin': 	'generic','riot': 	'generic','steam': 	'generic','wsus': 	'generic','xboxlive': 	'generic'}}" > /CacheDomains/scripts/config.json
-bash /CacheDomains/scripts/create-dnsmasq.sh
+cd CacheDomains/scripts
+bash CacheDomains/scripts/create-dnsmasq.sh
 
-cp -rf ./output/dnsmasq/*.conf /etc/dnsmasq.d
-cp -rf ./output/dnsmasq/hosts/* /etc/dnsmasq/hosts
+cp -rf output/dnsmasq/*.conf /etc/dnsmasq.d
+cp -rf output/dnsmasq/hosts/* /etc/dnsmasq/hosts
 
 # curl in armhf-buster's image has SSL issues. Running c_rehash fixes it.
 # https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=923479
