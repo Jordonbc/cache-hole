@@ -8,6 +8,7 @@ ARG S6_VERSION
 ENV S6OVERLAY_RELEASE "https://github.com/just-containers/s6-overlay/releases/download/${S6_VERSION}/s6-overlay-${S6_ARCH}.tar.gz"
 
 ENV LANCACHE_IP 0.0.0.0
+ENV CACHE_DOMAINS_REPO https://github.com/Jordonbc/cache-domains.git
 
 COPY install.sh /usr/local/bin/install.sh
 COPY VERSION /etc/docker-pi-hole-version
