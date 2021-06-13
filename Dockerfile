@@ -7,7 +7,7 @@ ARG S6_ARCH
 ARG S6_VERSION
 ENV S6OVERLAY_RELEASE "https://github.com/just-containers/s6-overlay/releases/download/${S6_VERSION}/s6-overlay-${S6_ARCH}.tar.gz"
 
-ENV LANCACHE_IP 192.168.0.10
+ENV LANCACHE_IP 0.0.0.0
 
 COPY install.sh /usr/local/bin/install.sh
 COPY VERSIONS /etc/pi-hole-versions
