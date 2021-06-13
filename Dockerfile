@@ -7,6 +7,8 @@ ARG S6_ARCH
 ARG S6_VERSION
 ENV S6OVERLAY_RELEASE "https://github.com/just-containers/s6-overlay/releases/download/${S6_VERSION}/s6-overlay-${S6_ARCH}.tar.gz"
 
+ENV LANCACHE_IP 192.168.0.10
+
 COPY install.sh /usr/local/bin/install.sh
 COPY VERSIONS /etc/pi-hole-versions
 ENV PIHOLE_INSTALL /etc/.pihole/automated\ install/basic-install.sh
@@ -37,8 +39,6 @@ EXPOSE 80
 ENV S6_LOGGING 0
 ENV S6_KEEP_ENV 1
 ENV S6_BEHAVIOUR_IF_STAGE2_FAILS 2
-
-ENV LANCACHE_IP 192.168.0.10
 
 ENV ServerIP 0.0.0.0
 ENV FTL_CMD no-daemon

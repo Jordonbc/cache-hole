@@ -37,7 +37,7 @@ apt-get install -y --force-yes git jq
 git clone https://github.com/uklans/cache-domains.git /CacheDomains
 echo "{
 	'ips': {
-		'generic':	['${LANCACHE_IP}']
+		'generic':	'${LANCACHE_IP}'
 	},
 	'cache_domains': {
 		'default': 	'generic',
