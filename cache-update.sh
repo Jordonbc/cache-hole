@@ -1,3 +1,4 @@
+#!/bin/bash -e
 cd "/CacheDomains/scripts"
 {
   git fetch origin

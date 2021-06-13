@@ -171,6 +171,6 @@ else
   pihole logging on
 fi
 
-sh cache-install.sh
+. /cache-install.sh
 
 echo " ::: Docker start setup complete"
