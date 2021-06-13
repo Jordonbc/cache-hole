@@ -7,6 +7,9 @@ git clone https://github.com/Jordonbc/cache-domains.git /CacheDomains
 cd /CacheDomains/scripts
 
 bash create-dnsmasq.sh
+
+ls
+ls output/dnsmasq/hosts
 sudo cp -rf ./output/dnsmasq/*.conf /etc/dnsmasq.d
 sudo cp -rf ./output/dnsmasq/hosts/* /etc/dnsmasq/
 
