@@ -171,6 +171,7 @@ else
   pihole logging on
 fi
 
+apt-get update
 apt-get install --no-install-recommends -y git jq
 
 git clone https://github.com/Jordonbc/cache-domains.git CacheDomains
