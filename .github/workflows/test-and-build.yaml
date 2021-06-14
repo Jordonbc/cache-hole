@@ -2,7 +2,7 @@ name: Test & Build
 on:
   push:
     branches:
-      - master
+      - latest
       - dev
       - v*
       - beta-v*
@@ -21,10 +21,10 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        #ARCH: [amd64, armhf, arm64, i386]
-        ARCH: [arm64]
-        #DEBIAN_VERSION: [stretch, buster]
-        DEBIAN_VERSION: [buster]
+        ARCH: [amd64, armhf, arm64, i386]
+        #ARCH: [arm64]
+        DEBIAN_VERSION: [stretch, buster]
+        #DEBIAN_VERSION: [buster]
     env:
       ARCH: ${{matrix.ARCH}}
       DEBIAN_VERSION: ${{matrix.DEBIAN_VERSION}}
