@@ -12,7 +12,7 @@ cd /CacheDomains/scripts
 
 echo "Replacing ips in config.json with ${LANCACHE_IP}"
 #sed -i "s/ipaddress/${LANCACHE_IP}/g" config.json
-sed "s/\[.*\]/[${LANCACHE_IP}]/g" config.json
+sed -i "s/\[.*\]/[${LANCACHE_IP}]/g" config.json
 
 echo "config.json now contains: "
 cat config.json
