@@ -8,9 +8,11 @@ apt-get install --no-install-recommends -y git jq
 echo "Cloning ${CACHE_DOMAINS_REPO} to /CacheDomains"
 git clone ${CACHE_DOMAINS_REPO} /CacheDomains
 
-echo "Switching branch to ${CACHE_DOMAINS_BRANCH}"
-git checkout ${CACHE_DOMAINS_BRANCH}
-echo "Switch Complete"
+if [${CACHE_DOMAINS_BRANCH} != "latest"]; then  # Change git branch if required
+    echo "Switching branch to ${CACHE_DOMAINS_BRANCH}"
+    git checkout ${CACHE_DOMAINS_BRANCH}
+    echo "Switching Complete"
+fi
 
 #echo "{'ips': {'generic':	'${LANCACHE_IP}'},'cache_domains': {'default': 	'generic','blizzard': 	'generic','origin': 	'generic','riot': 	'generic','steam': 	'generic','wsus': 	'generic','xboxlive': 	'generic'}}" > /CacheDomains/scripts/config.json
 cd /CacheDomains/scripts
