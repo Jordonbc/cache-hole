@@ -1,5 +1,6 @@
 #!/bin/bash -ex
 
+
 mkdir -p /etc/pihole/
 mkdir -p /var/run/pihole
 
