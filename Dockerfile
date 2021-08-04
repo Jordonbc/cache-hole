@@ -12,8 +12,8 @@ ENV CACHE_DOMAINS_REPO https://github.com/Jordonbc/cache-domains.git
 ENV CACHE_DOMAINS_BRANCH latest
 
 COPY install.sh /usr/local/bin/install.sh
-COPY VERSION /etc/docker-pi-hole-version
-ENV PIHOLE_INSTALL /root/ph_install.sh
+COPY VERSIONS /etc/pi-hole-versions
+ENV PIHOLE_INSTALL /etc/.pihole/automated\ install/basic-install.sh
 
 RUN bash -ex install.sh 2>&1 && \
     rm -rf /var/cache/apt/archives /var/lib/apt/lists/*
