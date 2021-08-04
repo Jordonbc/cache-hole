@@ -32,6 +32,7 @@ fetch_release_metadata() {
 
 apt-get update
 apt-get install --no-install-recommends -y curl procps ca-certificates git
+apt-get -y install debconf-utils
 
 # curl in armhf-buster's image has SSL issues. Running c_rehash fixes it.
 # https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=923479
@@ -66,7 +67,6 @@ source $setupVars
 export USER=pihole
 
 # fix permission denied to resolvconf post-inst /etc/resolv.conf moby/moby issue #1297
-apt-get -y install debconf-utils
 echo resolvconf resolvconf/linkify-resolvconf boolean false | debconf-set-selections
 
 export PIHOLE_SKIP_OS_CHECK=true
