@@ -31,7 +31,7 @@ fetch_release_metadata() {
 }
 
 apt-get update
-apt-get install --no-install-recommends -y curl procps ca-certificates
+apt-get install --no-install-recommends -y curl procps ca-certificates git
 
 # curl in armhf-buster's image has SSL issues. Running c_rehash fixes it.
 # https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=923479
